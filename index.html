@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陈可的考研征程记！</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-bg: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', '微软雅黑', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 头部样式 */
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        /* 时间轴样式 */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        /* 时间线中间轴线 */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        /* 每月计划卡片 */
+        .month-card {
+            position: relative;
+            width: 46%;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .month-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 左右交替布局 */
+        .month-card.left {
+            left: 0;
+        }
+
+        .month-card.right {
+            left: 54%;
+        }
+
+        /* 进度表格 */
+        .progress-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .progress-table th {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem;
+        }
+
+        .progress-table td {
+            padding: 0.6rem;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .progress-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        /* 状态标记 */
+        .status {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+
+        .completed {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .in-progress {
+            background: #f1c40f;
+            color: white;
+        }
+
+        .planned {
+            background: #bdc3c7;
+            color: white;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 20px;
+            }
+
+            .month-card {
+                width: 90%;
+                margin-left: 5%;
+                left: 0 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1>陈可的考研征程记！</h1>
+        <p>记录每一天的成长与进步</p>
+    </header>
+
+    <div class="container">
+        <div class="timeline">
+            <!-- 每月计划示例 -->
+            <div class="month-card left">
+                <h2>2024年3月计划</h2>
+                <table class="progress-table">
+                    <thead>
+                        <tr>
+                            <th>日期</th>
+                            <th>学习内容</th>
+                            <th>完成状态</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 每日记录示例 -->
+                        <tr>
+                            <td>3/1</td>
+                            <td>英语真题精讲</td>
+                            <td><span class="status completed">已完成</span></td>
+                            <td>正确率78%</td>
+                        </tr>
+                        <tr>
+                            <td>3/2</td>
+                            <td>政治马原复习</td>
+                            <td><span class="status in-progress">进行中</span></td>
+                            <td>完成第3章</td>
+                        </tr>
+                        <!-- 可在此添加更多每日记录 -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 其他月份计划可复制此结构 -->
+        </div>
+    </div>
+
+    <script>
+        // 自动生成表格的JavaScript逻辑（可按需扩展）
+        document.addEventListener('DOMContentLoaded', function () {
+            // 示例：自动生成30天的表格结构
+            const tableBody = document.querySelector('.progress-table tbody');
+            for (let i = 3; i <= 30; i++) {
+                const row = `
+                    <tr>
+                        <td>3/${i}</td>
+                        <td>待补充</td>
+                        <td><span class="status planned">计划中</span></td>
+                        <td>--</td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            }
+        });
+    </script>
+</body>
+
+</html>
